@@ -28,14 +28,7 @@ const aaaa = async () => {
   try {
     const permission = Notification.permission;
     if (permission !== 'granted') {
-      Notification.requestPermission().then();
-    }
-  } catch (e) {}
-
-  try {
-    const permission = Notification.permission;
-    if (permission !== 'granted') {
-      return;
+      await Notification.requestPermission();
     }
 
     if (!registration) {
